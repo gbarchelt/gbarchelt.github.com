@@ -221,6 +221,7 @@ h1, h2, h3, h4 {
 }
 .placeholder .left {
 	margin: 0 0 0 10px;
+	width: 590px;
 }
 .placeholder p {}
 
