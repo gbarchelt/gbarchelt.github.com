@@ -1,0 +1,230 @@
+﻿/*** Google Web Fonts *********************************************************/
+
+@import url("http://fonts.googleapis.com/css?family=UnifrakturMaguntia|Bangers");
+
+/*** BlueprintCSS Reset Styles ************************************************/
+
+html{margin:0;padding:0;border:0}body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;line-height:100%}article,aside,details,figcaption,figure,dialog,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1.5;background:white}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;float:none!important}table,th,td{vertical-align:middle}blockquote:before,blockquote:after,q:before,q:after{content:''}blockquote,q{quotes:"" ""}a img{border:none}:focus{outline:0}div.clear{clear:both}div.left{float:left}div.right{float:right}
+
+/*** G's Bar Styles ***********************************************************/
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+body {
+	background-image: url("./images/wood.jpg");
+	background-position: 0 0;
+	background-repeat: repeat;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Georgia;
+}
+body #wrapper {
+	background-image: url("./images/mask.png");
+	background-position: center 0;
+	background-repeat: no-repeat;
+	height: 100%;
+	text-align: center;
+}
+.container {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+#footer, #footerpush {
+	height: 2em;
+}
+#footer, #footer p {
+	overflow: hidden;
+	line-height: 2em;
+}
+
+
+#nav {
+	height: 61px;
+	overflow: hidden;
+	width: 100%;
+	background-image: url("./images/navbar.png");
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	position: relative;
+	z-index: 40;
+}
+#nav ul {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 0;
+	padding: 0;
+}
+#nav ul li {
+	display: block;
+	float: left;
+	height: 61px;
+	overflow: hidden;
+	margin: 0 0 0 -1px;
+
+}
+#nav ul li a {
+	position: relative;
+	z-index: 50;
+	font-family: UnifrakturMaguntia, Georgia;
+	text-transform: lowercase;
+	text-decoration: none;
+	color: #888;
+	font-size: 26px;
+	line-height: 61px;
+	display: block;
+	float: left;
+	padding: 0 10px;
+	height: 61px;
+	overflow: hidden;
+	background-image: url("./images/navbar.png");
+	text-shadow: 0 1px 0 #000;
+}
+#nav ul li.active a, #nav ul li a.active {
+	z-index: 51;
+	background-image: url("./images/navlinkactive.png");
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	padding: 0 9px;
+	border: 1px solid #000;
+	border-top: 0;
+	border-bottom: 0;
+	color: #000;
+	text-shadow: 0 1px 0 #A3B9CC;
+}
+#nav ul li a:link:hover {
+	z-index: 52;
+	background-image: url("./images/navlinkhover.png");
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	padding: 0 9px;
+	border: 1px solid #000;
+	border-top: 0;
+	border-bottom: 0;
+	color: #000;
+	text-shadow: 0 1px 0 #bdbdbd;
+}
+
+h1, h2, h3, h4 {
+	-webkit-text-stroke: 1px transparent;
+}
+
+#header {
+	background-image: url("./images/header.png");
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	height: 300px;
+	overflow: hidden;
+	box-shadow: 0 8px 50px #000;
+	margin: 0;
+	padding: 0;
+}
+#header .logo {
+	background-image: url("./images/gbarlogo.png");
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 251px;
+	margin: 0;
+	padding: 0;
+	-webkit-transition-duration: 0.5s;
+	float: right;
+	margin: 25px 0 0 25px;
+	background-position: 0 0;
+	opacity: 0.6;
+}
+#header .logo:hover {
+	opacity: 1;
+}
+
+#header h1 {
+	margin: 0;
+	padding: 0;
+	font-family: Bangers, Georgia;
+	letter-spacing: 5px;
+	font-size: 100px;
+	padding: 15px 0 0;
+	text-shadow: 0 2px 0 #adbfce;
+	color: #222;
+	-webkit-text-stroke: 1px transparent;
+}
+#header h2 {
+	margin: 0;
+	padding: 0;
+	width: 680px;
+	font-weight: normal;
+	text-shadow: 0 1px 0 #9caebd;
+	font-size: 50px;
+	color: #333;
+}
+
+.section {}
+.section .article {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	background-color: #bababa;
+	background-image: url("./images/metaltexture.png");
+	margin: 20px 0 0;
+	border: 2px solid #333;
+	box-shadow: 3px 3px 20px #000;
+	padding: 15px;
+}
+
+.section a {
+	text-decoration: none;
+	color: #234560;
+}
+.section a:hover {
+	text-decoration: underline;
+}
+
+.section .article.dark {
+	background-color: #868789;
+	background-image: url("./images/metaltexturehalf.png");
+}
+
+.facebook_plugin {
+	padding: 12px 12px 0 !important;
+}
+
+.placeholder {
+	overflow: hidden;
+}
+.placeholder img {
+	float: left;
+	position: relative;
+	top: -32px;
+	left: -20px;
+	-webkit-transform: rotate(-10deg);
+	border: 1px solid #000;
+	box-shadow: 2px 2px 20px #000;
+}
+.placeholder h3 {
+	font-family: Bangers;
+	margin: 0 0 10px;
+	padding: 5px 10px;
+	background-color: #fff;
+	border: 1px solid #000;
+	font-size: 32px;
+}
+.placeholder .left {
+	margin: 0 0 0 10px;
+}
+.placeholder p {}
+
+#footer {
+	background-color: red;
+	display: none;
+}
