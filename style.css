@@ -52,10 +52,9 @@ body #wrapper {
 
 #nav {
 	height: 61px;
-	overflow: hidden;
 	width: 100%;
-	background-image: url("./images/navbar.png");
-	background-position: 0 0;
+	background-image: url("./images/sprite-x.png");
+	background-position: 0 -301px;
 	background-repeat: repeat-x;
 	position: relative;
 	z-index: 40;
@@ -70,8 +69,8 @@ body #wrapper {
 	display: block;
 	float: left;
 	height: 61px;
-	overflow: hidden;
 	margin: 0 0 0 -1px;
+	position: relative;
 
 }
 #nav ul li a {
@@ -87,14 +86,14 @@ body #wrapper {
 	float: left;
 	padding: 0 10px;
 	height: 61px;
-	overflow: hidden;
-	background-image: url("./images/navbar.png");
+	background-image: url("./images/sprite-x.png");
+	background-position: 0 70px;
+	background-repeat: repeat-x;
 	text-shadow: 0 1px 0 #000;
 }
 #nav ul li.active a, #nav ul li a.active {
 	z-index: 51;
-	background-image: url("./images/navlinkactive.png");
-	background-position: 0 0;
+	background-position: 0 -363px;
 	background-repeat: repeat-x;
 	padding: 0 9px;
 	border: 1px solid #000;
@@ -103,10 +102,11 @@ body #wrapper {
 	color: #000;
 	text-shadow: 0 1px 0 #A3B9CC;
 }
+
+#nav ul li:hover a:link,
 #nav ul li a:link:hover {
 	z-index: 52;
-	background-image: url("./images/navlinkhover.png");
-	background-position: 0 0;
+	background-position: 0 -425px;
 	background-repeat: repeat-x;
 	padding: 0 9px;
 	border: 1px solid #000;
@@ -116,12 +116,43 @@ body #wrapper {
 	text-shadow: 0 1px 0 #bdbdbd;
 }
 
+#nav li ul {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #000;
+	background-color: #878787;
+	top: 60px;
+	z-index: 35 !important;
+	display: none;
+	padding: 3px 0;
+}
+div#wrapper div#nav ul li ul li {
+	line-height: 100%;
+	height: auto;
+	clear: both;
+	font-size: 100%;
+	padding: 3px 0;
+}
+div#wrapper div#nav ul li ul li a {
+	background-image: none;
+	border: 0;
+	height: auto;
+	line-height: 100%;
+	white-space: nowrap;
+}
+#nav li:hover ul {
+	display: block;
+}
+#nav li ul li a:hover {}
+
 h1, h2, h3, h4 {
 	-webkit-text-stroke: 1px transparent;
 }
 
 #header {
-	background-image: url("./images/header.png");
+	background-color: #416a8b;
+	background-image: url("./images/sprite-x.png");
 	background-position: 0 0;
 	background-repeat: repeat-x;
 	height: 300px;
@@ -129,6 +160,9 @@ h1, h2, h3, h4 {
 	box-shadow: 0 8px 50px #000;
 	margin: 0;
 	padding: 0;
+	position: relative;
+	z-index: 30;
+	border-bottom: 1px solid #000;
 }
 #header .logo {
 	background-image: url("./images/gbarlogo.png");
@@ -179,7 +213,7 @@ h1, h2, h3, h4 {
 	margin: 20px 0 0;
 	border: 2px solid #333;
 	box-shadow: 3px 3px 20px #000;
-	padding: 15px;
+	padding: 10px;
 }
 
 .section a {
@@ -195,8 +229,24 @@ h1, h2, h3, h4 {
 	background-image: url("./images/metaltexturehalf.png");
 }
 
-.facebook_plugin {
-	padding: 12px 12px 0 !important;
+.social_plugins {
+	-webkit-border-radius: 0 0 8px 8px !important;
+	-moz-border-radius: 0 0 8px 8px !important;
+	-o-border-radius: 0 0 8px 8px !important;
+	border-radius: 0 0 8px 8px !important;
+	border-top: 0 !important;
+	padding: 20px 10px 8px !important;
+	margin: 0 !important;
+}
+.social_plugins .twitter {
+	overflow: hidden;
+	width: 200px;
+	float: right;
+	margin-top: 2px;
+}
+.social_plugins .facebook {
+	width: 700px;
+	overflow: hidden;
 }
 
 .placeholder {
