@@ -23,6 +23,9 @@ body {
 	border: 0;
 	font-family: Georgia;
 }
+body #wrapper p {
+	line-height: 125%;
+}
 body #wrapper {
 	background-image: url("./images/mask.png");
 	background-position: center 0;
@@ -53,6 +56,7 @@ body #wrapper {
 #nav {
 	height: 61px;
 	width: 100%;
+	background-color: #494949;
 	background-image: url("./images/sprite-x.png");
 	background-position: 0 -301px;
 	background-repeat: repeat-x;
@@ -93,6 +97,7 @@ body #wrapper {
 }
 #nav ul li.active a, #nav ul li a.active {
 	z-index: 51;
+	background-color: #416a8b;
 	background-position: 0 -363px;
 	background-repeat: repeat-x;
 	padding: 0 9px;
@@ -140,11 +145,16 @@ div#wrapper div#nav ul li ul li a {
 	height: auto;
 	line-height: 100%;
 	white-space: nowrap;
+	display: block;
 }
 #nav li:hover ul {
 	display: block;
 }
-#nav li ul li a:hover {}
+#nav li ul li:hover a:link,
+#nav li ul li a:link:hover {
+	color: #ccc;
+	text-shadow: 0 1px 0 #000;
+}
 
 h1, h2, h3, h4 {
 	-webkit-text-stroke: 1px transparent;
