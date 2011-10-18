@@ -86,11 +86,14 @@
 			<!-- Masthead. This is for positioning, the masthead image is a background-image of the body. Also contains alerts. -->
 			<div id="masthead">
 				<div class="container">
-					<div class="alert-message error">
-						<a class="close">&times;</a>
-						<strong>Drinkin' is niiice!</strong>
-						And other stuff like that :\<br />Span two lines because I have been drinking Sailor Jerry's!
-					</div>
+					<!--[if lt IE 9]-->
+						<div class="alert-message error">
+							<a class="close">&times;</a>
+							<strong>Incorrect browser!</strong>
+							You are using an insecure and out-of-date browser.
+							For best results, we recommend using <a href="http://www.google.com/chrome" title="Google Chrome">Google Chrome</a>.
+						</div>
+					<!--[endif]-->
 				</div>
 			</div>
 
@@ -98,9 +101,7 @@
 			<div id="header" class="header">
 				<div class="shadow">
 					<a class="ribbon" href="#" title="Drunken allstars">Drunken Allstars</a>
-					<div class="container">
-						<h2>Page title...<br />Spanning another line...</h2>
-					</div>
+					<h2>Page title...<br />Spanning another line...</h2>
 				</div>
 			</div>
 
