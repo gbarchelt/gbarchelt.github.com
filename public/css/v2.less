@@ -1,0 +1,136 @@
+/*** Google Web Fonts ********************************************************
+@import "http://fonts.googleapis.com/css?family=UnifrakturMaguntia|Bangers";  */
+
+/*** Twitter's Bootstrap ******************************************************/
+@import "./bootstrap/bootstrap.less";
+
+/*** G's Bar, Cheltenham: Variables *******************************************/
+@image_wood:		url("../images/v2/wood.png");
+@image_albumart:	url("../images/v2/masthead.png");
+@image_topbar:		url("../images/v2/topbar-title.png");
+@image_ribbon:		url("../images/v2/drunken-allstars.png");
+@image_logo:		url("../images/v2/logo.png");
+@image_shadow:		url("../images/v2/cutout-shadow.png");
+
+/*** Mixins *******************************************************************/
+
+.no-text() {
+	/**
+	 * Make sure that the element has a set width. This causes the text to have
+	 * no effect on the dimensions of the element.
+	 */
+	color: transparent;
+	text-indent: -9999em;
+}
+.sharp-shadow(@color: #000, @strength: 1px) {
+	text-shadow: 0 @strength 0 @color;
+}
+
+/*** G's Bar, Cheltenham: Styles **********************************************/
+
+html {
+	background-image: @image_wood;
+	background-position: center 0;
+	background-repeat: repeat;
+}
+
+body {
+	background-image: @image_wood;
+	background-position: center 40px;
+	background-repeat: repeat-x;
+}
+
+#overlay {
+	display: none;
+}
+
+#wrapper {
+	background-image: @image_albumart;
+	background-position: center 40px;
+	background-repeat: repeat-x;
+}
+
+#topbar {
+	h1 {
+		margin: 0 !important;
+		a {
+			background-image: @image_topbar;
+			background-position: center 0;
+			background-repeat: no-repeat;
+			.no-text();
+			width: 82px;
+			&:hover {
+				background-position: center -40px;
+			}
+		}
+	}
+	ul li a {
+		font-family: "UnifrakturMaguntia";
+		font-size: 150%;
+		text-transform: lowercase;
+	}
+}
+
+#masthead {
+	padding: 52px 0 10px;
+	height: 37px;
+	overflow: hidden;
+	.alert-message {
+		box-shadow: 0 0 50px #ff9;
+		margin: 0;
+		// Set the height to one line-height. This ensures that it never spills over one line.
+		height: 34px;
+		overflow: hidden;
+	}
+}
+
+#header {
+	position: relative;
+	width: 980px;
+	background-image: @image_wood;
+	background-position: center -59px;
+	background-repeat: repeat;
+	margin: 0 auto;
+	border-radius: 15px 15px 0 0;
+	.shadow {
+		background-image: @image_shadow;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		min-height: 500px;
+	}
+	.ribbon {
+		width: 140px;
+		height: 140px;
+		background-image: @image_ribbon;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		display: block;
+		position: absolute;
+		.no-text();
+		top: 2px;
+		right: 2px;
+	}
+	h2 {
+		background-image: @image_logo;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		//height: 173px;
+		overflow: hidden;
+		font-size: 48px;
+		//padding: 0 0 0 210px;
+		margin: 0;
+		@lineheight: (@baseline * 2) + 24px;
+		line-height: @lineheight;
+		padding: (173px - @lineheight) 0 0 210px;
+		text-shadow: 0 1px 0px #f60;
+		color: #000;
+	}
+
+
+
+
+}
+
+#content {}
+
+#footer {}
