@@ -1,22 +1,52 @@
 /*** Google Web Fonts ********************************************************
 @import "http://fonts.googleapis.com/css?family=UnifrakturMaguntia|Bangers";  */
 
-/*** Twitter's Bootstrap ******************************************************/
-@import "./bootstrap/bootstrap.less";
-
 /*** G's Bar, Cheltenham: Variables *******************************************/
-@footerHeight: 100px;
-@backgroundImage: url("../images/backgrounds/woodtile.png");
+
+// Background Images.
+@image_wood:		url("../images/wood.png");
+@image_albumart:	url("../images/masthead.png");
+@image_topbar:		url("../images/topbar-title.png");
+@image_ribbon:		url("../images/drunken-allstars.png");
+@image_logo:		url("../images/logo.png");
+@image_shadow:		url("../images/shadow-y.png");
+@image_glowtop:		url("../images/content-shadow-top.png");
+@image_glow:		url("../images/content-shadow-y.png");
+@image_paper:		url("../images/paper.png");
+@image_header:		url("../images/cutout-shadow.png");
+
+/*** G's Bar, Cheltenham: Mixins **********************************************/
+
+// Remove the innerText from an element. Make sure it has a set width, though.
+.no-text() {
+	color: transparent;
+	text-indent: -9999em;
+}
+// Browser vendor border radius implementations.
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
 
 /*** G's Bar, Cheltenham: Styles **********************************************/
 
 html, body {
 	height: 100%;
 }
-
-body {
-	background-image: @backgroundImage;
+html {
+	background-color: #4d4d4d;
+	background-image: @image_wood;
 	background-position: center 0;
+	background-repeat: repeat; 
+}
+body {
+	background-color: transparent;
+	background-image: @image_albumart;
+	background-position: center 40px;
+	background-repeat: repeat-x;
+	// Height of the navigation bar and body background image height.
+	min-height: 380px;
 }
 
 #overlay {
@@ -24,85 +54,107 @@ body {
 }
 
 #wrapper {
+	// Nothing to see here.
 }
 
-.topbar {
+#navbar {
 	h1 {
-		margin: 0 !important;
+		margin: 0;
+		a {
+			background-image: @image_topbar;
+			background-position: center 0;
+			background-repeat: no-repeat;
+			width: 82px;
+			.no-text();
+			&:hover {
+				background-position: center -40px;
+			}
+		}
 	}
-	ul li a {
+	ul.nav li a {
 		font-family: "UnifrakturMaguntia";
-		font-size: 150%;
 		text-transform: lowercase;
+		font-size: 165%;
+		margin-top: 2px;
+		margin-bottom: -2px;
+	}
+	.social {
+		margin-top: 9px;
+		margin-bottom: -9px;
+		a {
+			display: inline !important;
+		}
 	}
 }
 
-#masthead {
-	background-image: url("../images/backgrounds/masthead.png");
-	background-position: 0 0;
-	background-repeat: repeat-x;
-	height: 300px;
-	overflow: hidden;
-	box-shadow: 0 0 20px #000;
-	position: absolute;
-	top: 40px;
-	width: 100%;
-	z-index: 10;
-	border-bottom: 2px solid #000;
-	hgroup {
-		padding: 0;
-		margin: 10px 0;
-		height: 50px;
+#header {
+	.border-radius(15px 15px 0 0);
+	background-color: #4d4d4d;
+	width: 980px;
+	margin: 0 auto;
+	background-image: @image_wood;
+	background-position: center -58px;
+	background-repeat: repeat;
+	position: relative;
+	min-height: 142px;
+	.shadow {
+		padding: 20px 0 0;
+		background-image: @image_header;
+		background-position: center 0;
+		background-repeat: no-repeat;
+	}
+	.alert {
+		position: absolute;
+		width: 889px;
+		z-index: 10;
+	}
+	.ribbon {
+		background-color: transparent;
+		background-image: @image_ribbon;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		width: 140px;
+		height: 140px;
+		.no-text();
+		z-index: 9;
+	}
+	h2 {
+		background-color: transparent;
+		background-image: @image_logo;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		font-size: 48px;
+		line-height: 52px;
+		height: 58px;
 		overflow: hidden;
-		h2 {
-			padding: 5px 10px;
-			margin: 0;
-			background-image: url("../images/backgrounds/metal/90.png");
-			color: #000;
-			border: 2px solid #333;
-			.border-radius(5px);
-			-webkit-text-stroke: 1px transparent;
-			text-stroke: 1px transparent;
-			text-shadow: 0 1px 1px #ccc;
-		}
+		padding: 113px 20px 0 210px;
+		margin: 0;
+		color: black;
+		text-shadow: 0 1px 1px #f60;
 	}
 }
 
 #content {
-	position: relative;
-	z-index: 20;
-	top: 110px;
-	.outer-container {
-		background-image: @backgroundImage;
-		background-position: center -110px;
-		height: 230px;
-		max-height: 230px;
+	background-image: @image_wood;
+	background-position: center -249px;
+	background-repeat: repeat;
+	width: 980px;
+	margin: 0 auto;
+	.container {
+		background-color: #e6e6e6;
+		background-image: @image_paper;
+		background-position: center 0;
+		background-repeat: repeat;
 		border: 2px solid #000;
-		border-bottom: 0;
-		.border-radius(5px 5px 0 0);
-		width: 966px;
-		margin: 0 auto;
-		.fill-container {
-			min-height: 240px;
-			background-image: @backgroundImage;
-			background-position: center -112px;
-			padding: 10px 20px 0 10px;
-		}
+		.border-radius(15px 15px 0 0);
+		min-height: 600px;
 	}
-	article {
-		background-image: url("../images/backgrounds/paper/80.png");
-		border: 2px solid #000;
-		width: 944px;
-		.border-radius(5px);
-	}
-}
-
-.social {
-	.clearfix();
-	.social-twitter {
-		float: right;
-	}
-	.social-facebook {
-		float: left;
+	.shadow {
+		background-image: @image_shadow;
+		background-position: center 0;
+		background-repeat: repeat-y;
 	}
 }
